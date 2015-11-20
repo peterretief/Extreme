@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.development.peter.extreme"
+android:versionCode="1"
+android:versionName="1.0" >
+
+<!--    <uses-feature android:name="android.hardware.usb.accessory" />  -->
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
+
+<uses-sdk
+    android:minSdkVersion="10"
+    android:targetSdkVersion="19" />
+
+<application
+    android:name="com.development.peter.extreme.Globals"
+    android:allowBackup="true"
+    android:icon="@drawable/ic_launcher"
+    android:label="@string/app_name"
+    >
+    <!--    <uses-library android:name="com.android.future.usb.accessory" />  -->
+
+    <activity
+        android:name="com.development.peter.extreme.MainActivity"
+        android:label="@string/app_name"
+        android:launchMode="singleInstance" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+            android:resource="@xml/settings" />
+    </activity>
+
+    <service
+        android:name="com.development.peter.extreme.FanService"
+        android:exported="false"
+        android:label="Controller" >
+        <intent-filter>
+            <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+            android:resource="@xml/settings" />
+    </service>
+
+    <activity
+        android:name="com.development.peter.extreme.SetupActivity"
+        android:label="@string/title_activity_setup" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+
+</manifest>

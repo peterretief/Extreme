@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="button_type">
+        <item name="1">Toggle</item>
+        <item name="0">Press</item>
+    </string-array>
+</resources>

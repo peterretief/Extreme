@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <resources>
+      <usb-accessory model="IOIO"/>
+    </resources>
+    
+    <PreferenceCategory android:title="@string/btn_type" >
+        <EditTextPreference
+                android:title="@string/btn_lable"
+                android:key="btn_lable"/>
+    </PreferenceCategory>
+     
+    <PreferenceCategory android:title="@string/btn_type" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/btn_type" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+</PreferenceScreen>
+
+
